@@ -2,8 +2,10 @@ import React from 'react';
 import TopBar from '../TopBar/TopBar';
 import TopSearch from '../TopSearch/TopSearch';
 import Link from 'next/link'
+import { useSelector } from 'react-redux';
 
 function Header(props) {
+    const cartItemsCount = useSelector((state) => state.cart.length)
     return (
         <>
             <TopBar />
@@ -103,7 +105,7 @@ function Header(props) {
                                     <Link href="/cart">
                                         <a>
                                             <i className="fa fa-shopping-bag"></i>
-                                            <span className="badge">3</span>
+                                            <span className="badge">{cartItemsCount}</span>
                                         </a>
                                     </Link>
                                 </li>

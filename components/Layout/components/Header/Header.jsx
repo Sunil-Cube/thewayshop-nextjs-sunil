@@ -1,6 +1,7 @@
 import React from 'react';
 import TopBar from '../TopBar/TopBar';
 import TopSearch from '../TopSearch/TopSearch';
+import Link from 'next/link'
 
 function Header(props) {
     return (
@@ -18,8 +19,16 @@ function Header(props) {
 
                         <div className="collapse navbar-collapse" id="navbar-menu">
                             <ul className="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                                <li className="nav-item active"><a className="nav-link" href="index.html">Home</a></li>
-                                <li className="nav-item"><a className="nav-link" href="about.html">About Us</a></li>
+                                <li className="nav-item active">
+                                    <Link href="/">
+                                        <a className="nav-link">Home</a>
+                                    </Link>
+
+                                </li>
+
+                                <li className="nav-item">
+                                    <Link href="/about">
+                                        <a className="nav-link">About Us</a></Link></li>
                                 <li className="dropdown megamenu-fw">
                                     <a href="#" className="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
                                     <ul className="dropdown-menu megamenu-content" role="menu">
@@ -76,24 +85,28 @@ function Header(props) {
                                 <li className="dropdown">
                                     <a href="#" className="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                                     <ul className="dropdown-menu">
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="my-account.html">My Account</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="shop-detail.html">Shop Detail</a></li>
+                                        <li><Link href="/cart"><a>Cart</a></Link></li>
+                                        <li><Link href="/checkout"><a>Checkout</a></Link></li>
+                                        <li><Link href="/my-account"><a>My Account</a></Link></li>
+                                        <li><Link href="/wishlist"><a>Wishlist</a></Link></li>
+                                        <li><Link href="/shop-detail"><a>Shop Detail</a></Link></li>
                                     </ul>
                                 </li>
-                                <li className="nav-item"><a className="nav-link" href="service.html">Our Service</a></li>
-                                <li className="nav-item"><a className="nav-link" href="contact-us.html">Contact Us</a></li>
+                                <li className="nav-item"><Link href="/service"><a className="nav-link">Our Service</a></Link></li>
+                                <li className="nav-item"><Link href="/contact-us"><a className="nav-link">Contact Us</a></Link></li>
                             </ul>
                         </div>
                         <div className="attr-nav">
                             <ul>
                                 <li className="search"><a href="#"><i className="fa fa-search"></i></a></li>
-                                <li className="side-menu"><a href="#">
-                                    <i className="fa fa-shopping-bag"></i>
-                                    <span className="badge">3</span>
-                                </a></li>
+                                <li className="side-menu">
+                                    <Link href="/cart">
+                                        <a>
+                                            <i className="fa fa-shopping-bag"></i>
+                                            <span className="badge">3</span>
+                                        </a>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
